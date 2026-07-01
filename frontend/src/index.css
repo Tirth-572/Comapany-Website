@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #161512;
+  --color-secondary: #FAC775;
+  --color-accent: #412402;
+  --color-background: #F8F6F2;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #161512;
+  --color-text-secondary: #666666;
+  --color-border: rgba(22, 21, 18, 0.08);
+
+  --font-heading: "Libre Bodoni", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
