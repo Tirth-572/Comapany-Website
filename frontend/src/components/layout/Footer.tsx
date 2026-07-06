@@ -38,7 +38,7 @@ export const Footer = () => {
             <Link to="/" className="inline-block mb-8">
               <img src="/Krishiva Technologies New Logo.png" alt="Krishiva Technology" className="h-24 md:h-32 w-auto object-contain" />
             </Link>
-            <Typography variant="body" className="text-white/70 mb-8 max-w-sm">
+            <Typography variant="body" className="text-text-on-dark mb-8 max-w-sm">
               Engineering Intelligent Products for the Future. Building tomorrow through technology and elegant design.
             </Typography>
 
@@ -67,7 +67,7 @@ export const Footer = () => {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-white/60 hover:text-secondary transition-colors text-sm font-medium"
+                      className="text-text-on-dark hover:text-secondary transition-colors text-sm font-medium"
                     >
                       {link.name}
                     </Link>
@@ -79,7 +79,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <Typography variant="small" className="text-white/40">
+          <Typography variant="small" className="text-text-on-dark">
             © {currentYear} Krishiva Technology. All rights reserved.
           </Typography>
 

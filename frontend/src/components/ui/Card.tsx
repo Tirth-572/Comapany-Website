@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ children, className, ...props }) => 
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className={cn(
-        'bg-surface border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-shadow duration-300',
+        'bg-surface border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-[0_8px_30px_rgb(250,199,117,0.12)] hover:border-secondary/50 transition-all duration-300',
         className
       )}
       {...props}

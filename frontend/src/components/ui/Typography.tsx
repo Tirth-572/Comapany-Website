@@ -16,12 +16,12 @@ export const Typography: React.FC<TypographyProps> = ({
   const Component = as || (['body', 'small'].includes(variant) ? 'p' : variant);
 
   const baseStyles = {
-    h1: 'text-5xl md:text-7xl font-black font-heading text-primary leading-tight tracking-tight',
-    h2: 'text-4xl md:text-5xl font-extrabold font-heading text-primary leading-tight',
-    h3: 'text-3xl md:text-4xl font-bold font-heading text-primary',
-    h4: 'text-2xl md:text-3xl font-bold font-heading text-primary',
-    h5: 'text-xl md:text-2xl font-bold font-heading text-primary',
-    h6: 'text-lg md:text-xl font-bold font-heading text-primary',
+    h1: 'text-5xl md:text-7xl font-semibold font-heading text-primary leading-tight tracking-tight',
+    h2: 'text-4xl md:text-5xl font-semibold font-heading text-primary leading-tight',
+    h3: 'text-3xl md:text-4xl font-semibold font-heading text-primary',
+    h4: 'text-2xl md:text-3xl font-medium font-heading text-primary',
+    h5: 'text-xl md:text-2xl font-medium font-heading text-primary',
+    h6: 'text-lg md:text-xl font-medium font-heading text-primary',
     body: 'text-base md:text-lg text-text-secondary leading-relaxed font-body',
     small: 'text-sm text-text-secondary font-body',
   };

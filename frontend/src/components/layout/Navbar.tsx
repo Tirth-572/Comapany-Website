@@ -31,8 +31,8 @@ export const Navbar = () => {
       <div 
         className={`pointer-events-auto flex items-center justify-between w-full max-w-6xl px-6 py-2 md:py-2.5 transition-all duration-500 ease-out rounded-full border ${
           isScrolled 
-            ? 'bg-surface/90 backdrop-blur-xl shadow-lg border-border/50' 
-            : 'bg-transparent border-transparent'
+            ? 'bg-primary/95 backdrop-blur-xl shadow-lg border-white/10' 
+            : 'bg-primary/80 border-transparent'
         }`}
       >
         {/* Logo */}
@@ -48,8 +48,8 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`relative text-sm font-semibold transition-colors px-1 py-2 group ${
-                  isActive ? 'text-primary' : 'text-text-secondary hover:text-primary'
+                className={`relative text-sm font-medium transition-colors px-1 py-2 group font-body ${
+                  isActive ? 'text-secondary' : 'text-text-on-dark hover:text-white'
                 }`}
               >
                 {link.name}
@@ -70,7 +70,7 @@ export const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden z-50 p-2 text-primary"
+          className="md:hidden z-50 p-2 text-text-on-dark hover:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -79,20 +79,20 @@ export const Navbar = () => {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-4 right-4 mt-2 bg-surface shadow-2xl border border-border/50 rounded-3xl p-6 flex flex-col gap-4 md:hidden pointer-events-auto"
-            >
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="absolute top-full left-4 right-4 mt-2 bg-primary shadow-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 md:hidden pointer-events-auto"
+              >
               {navLinks.map((link) => {
                 const isActive = location.pathname.startsWith(link.href);
                 return (
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`text-lg font-medium py-2 border-b border-border ${
-                      isActive ? 'text-secondary' : 'text-primary hover:text-secondary'
+                    className={`text-lg font-medium py-2 border-b border-white/10 ${
+                      isActive ? 'text-secondary' : 'text-text-on-dark hover:text-white'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

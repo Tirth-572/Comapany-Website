@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -16,10 +17,11 @@ const Placeholder = ({ title }: { title: string }) => (
   </div>
 );
 
-function App() {
+const AnimatedRoutes = () => {
+  const location = useLocation();
   return (
-    <BrowserRouter>
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -32,6 +34,14 @@ function App() {
           <Route path="*" element={<Placeholder title="404 - Not Found" />} />
         </Route>
       </Routes>
+    </AnimatePresence>
+  );
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AnimatedRoutes />
     </BrowserRouter>
   );
 }
